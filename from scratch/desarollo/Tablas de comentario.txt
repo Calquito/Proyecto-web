@@ -1,0 +1,6 @@
+ID
+Comentario
+Pais
+Universidad
+Likes
+Fecha
