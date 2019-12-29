@@ -5,8 +5,10 @@
 
         //define the variables of the server 
         $host = "localhost";
-        $dbusername = "uuu7djctptbt7";
-        $dbpassword = "elcrack1409";
+        $dbusername = "root";
+        $dbpassword = "";
+        //$dbusername = "uuu7djctptbt7";
+        //$dbpassword = "elcrack1409";
         $dbname = "dbu58nyapm8ef7";
         $tablename= "Tabla_de_prueba";
 

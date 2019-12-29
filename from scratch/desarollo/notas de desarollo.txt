@@ -1,0 +1,4 @@
+recordar evitar que la pagina se almacene en caché
+quitar referencias a urls de bootstrap  y jquery
+
+nadie te salvara cancion
