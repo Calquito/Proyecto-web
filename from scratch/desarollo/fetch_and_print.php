@@ -16,21 +16,28 @@
         $result = mysqli_query($connect, $query);
         echo'esto deberia aparecer una vez cada n mensajes';
         while($row = mysqli_fetch_array($result)){
-            echo '
-            <div class="card d-flex align-content-start  mt-4 w-75 ">
+?>
+            <div class="card d-flex align-content-start  mt-4 ">
                 <div class="card-header">
-                    Featured
+                <form method="post" action="increase_likes.php">
+                    <p class="card-text"><?php echo $row["ID"]?></p>
+                    <p class="card-text" ><?php echo $row["likes"] ?></p>
+
+                    <input type="hidden" name="ID" value="<?php echo $row["ID"];?>">
+
+                    <input type="submit" name="increase_button" value="+" />
+                    <input type="submit" name="decrease_button" value="-" />
+                </form>
                 </div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">'.$row["Comentario"].'</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text"><?php echo $row["Comentario"]?></p>
                 </div>
                 <div class="card-footer ">
                     2 days ago
                 </div>
             </div>
-            ';
+<?php     
         }    
     }
     else{

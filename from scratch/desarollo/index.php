@@ -24,10 +24,17 @@
     <?php include 'nav_and_bar.html';?>
 
     <!-- modal window-->
-    <?php include 'modal_window.html';?><!-- modal window-->
+    <?php include 'modal_window.php';?><!-- modal window-->
 
-    <!--scroll-->
-    <?php include 'load_scroll.php';?>
+    
+    <div class="d-flex flex-row bd-highlight mb- justify-content-around ">
+      <!--scroll-->
+      <div class=" bd-highlight w-75 mr-3"><?php include 'load_scroll.php';?></div>
+      <!--sidebar-->
+      <div class=" bd-highlight d-none d-sm-block w-25 ">
+      </div>    
+    </div>
+    
     
 </body>
 </html>
