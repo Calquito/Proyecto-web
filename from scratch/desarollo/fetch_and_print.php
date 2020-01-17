@@ -9,10 +9,14 @@
     $dbname = "dbu58nyapm8ef7";
     $tablename= "Tabla_de_prueba";
 
+    //get ip 
+    include 'get_ip.php';
+    $IP=getUserIpAddr();
+    
     // fetch from server
     if(isset($_POST["limit"], $_POST["start"])){
         $connect = mysqli_connect($host, $dbusername, $dbpassword , $dbname);
-        $query = "SELECT * FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+        $query = "SELECT ID,Comentario,likes FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
         $result = mysqli_query($connect, $query);
         echo'esto deberia aparecer una vez cada n mensajes';
         while($row = mysqli_fetch_array($result)){
@@ -23,7 +27,9 @@
                     <p class="card-text"><?php echo $row["ID"]?></p>
                     <p class="card-text" ><?php echo $row["likes"] ?></p>
 
+                    <!-- pass variables to php -->
                     <input type="hidden" name="ID" value="<?php echo $row["ID"];?>">
+                    <input type="hidden" name="IP" value="<?php echo $IP;?>">
 
                     <input type="submit" name="increase_button" value="+" />
                     <input type="submit" name="decrease_button" value="-" />
