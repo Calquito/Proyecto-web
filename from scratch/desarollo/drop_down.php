@@ -1,37 +1,3 @@
-<!--<!doctype html>
-  <div>
-    <select class="form-control" name="select1" id="select1">
-      <option value="1">Fruit</option>
-      <option value="2">Animal</option>
-      <option value="3">Bird</option>
-      <option value="4">Car</option>
-    </select>
-  </div>
-  <div>
-    <select class="form-control" name="select2" id="select2">
-      <option value="1">Banana</option>
-      <option value="1">Apple</option>
-      <option value="1">Orange</option>
-      <option value="2">Wolf</option>
-      <option value="2">Fox</option>
-      <option value="2">Bear</option>
-      <option value="3">Eagle</option>
-      <option value="3">Hawk</option>
-      <option value="4">BWM<option>
-  </select>
-  </div>
-
-  <script>
-    var $select1 = $( '#select1' ),
-        $select2 = $( '#select2' ),
-        $options = $select2.find( 'option' );
-        
-    $select1.on( 'change', function() {
-      $select2.html( $options.filter( '[value="' + this.value + '"]' ) );
-    } ).trigger( 'change' );
-  </script>
-</html>-->
-
 <!DOCTYPE html>
 <html>
 <head>

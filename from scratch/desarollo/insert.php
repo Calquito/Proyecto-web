@@ -5,14 +5,7 @@
 
     if(!empty($comentario)){
 
-        //define the variables of the server 
-        $host = "localhost";
-        $dbusername = "root";
-        $dbpassword = "";
-        //$dbusername = "uuu7djctptbt7";
-        //$dbpassword = "elcrack1409";
-        $dbname = "dbu58nyapm8ef7";
-        $tablename= "Tabla_de_prueba";
+        include 'host_variables.php';
 
         $conn= new mysqli ($host, $dbusername, $dbpassword , $dbname);//create connection
 

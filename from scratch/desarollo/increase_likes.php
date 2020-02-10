@@ -3,15 +3,8 @@
     $ID = $_POST['ID'];
     $IP = $_POST['IP'];
 
-    //define the variables of the server 
-    $host = "localhost";
-    $dbusername = "root";
-    $dbpassword = "";
-    //$dbusername = "uuu7djctptbt7";
-    //$dbpassword = "elcrack1409";
-    $dbname = "dbu58nyapm8ef7";
-    $tablename= "Tabla_de_prueba";
-
+    include 'host_variables.php';
+    
     $conn= mysqli_connect($host, $dbusername, $dbpassword , $dbname);//create connection
 
     if(mysqli_connect_error()){//verify if there is not connection error
@@ -20,21 +13,22 @@
     else{
 
         if (isset($_POST['increase_button']) and !verify($IP,$ID,$conn,$tablename) ) {
-            $sql = "UPDATE $tablename SET likes = likes +1 , ips = CONCAT(ips,'".$IP."',',')   WHERE ID = $ID;"; //insert into table
+            $sql = "UPDATE $tablename SET likes = likes +1 , ips = CONCAT(ips,'".$IP."',',')  WHERE ID = $ID;"; //insert into table
 
             if($conn->query($sql)){ //verify if sql exist in table
-                echo "insertada";
+                echo 'inserted';
             }
             else{
                 echo "error";
             }
             $conn->close();//close the connection
         
-        } 
+        }
+         
         else if (isset($_POST['decrease_button']) and !verify($IP,$ID,$conn,$tablename)) {
             $sql = "UPDATE $tablename SET likes = likes -1 , ips = CONCAT(ips,'".$IP."',',')   WHERE ID = $ID;"; //insert into table
             if($conn->query($sql)){ //verify if sql exist in table
-                echo "se inserto correctamente";
+                echo 'inserted';
             }
             else{
                 echo "error";
@@ -44,8 +38,9 @@
         } 
         else {
             //no button pressed
-            echo "no lo metio";
+            echo json_encode('not inserted');
         }
+        
     }
 
 function verify($IP,$ID,$conn,$tablename){
@@ -60,7 +55,6 @@ function verify($IP,$ID,$conn,$tablename){
             break;
         }
     }
-    echo $exist;
     return $exist;
 
 }

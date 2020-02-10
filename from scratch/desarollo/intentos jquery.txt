@@ -1,0 +1,30 @@
+                $('pen').on('increase_button' , function(e) {
+                var url = "increase_likes.php"; // the script where you handle the form input.
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#pen").serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                        alert(data); // show response from the php script.
+                    }
+                    });
+
+                return false; // avoid to execute the actual submit of the form.
+                });
+
+
+                $("#increase_button").click(function() {
+                var url = "increase_likes.php"; // the script where you handle the form input.
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#pen").serialize(), // serializes the form's elements.
+                    success: function(data)
+                    {
+                        alert(data); // show response from the php script.
+                    }
+                    });
+
+                return false; // avoid to execute the actual submit of the form.
+                });

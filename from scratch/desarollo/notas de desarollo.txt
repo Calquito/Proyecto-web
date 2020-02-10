@@ -1,2 +1,33 @@
 recordar evitar que la pagina se almacene en caché
 quitar referencias a urls de bootstrap  y jquery
+bugs: subir cuando no se han seleccionado drop-down
+https://www.adzooma.com/performance-report/?utm_source=SEJ&utm_medium=display&utm_campaign=Takeover&utm_content=750x500
+close connection mysql
+
+        <form  method="post" action="insert.php" >
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <?php include 'drop_down.php';?>
+            </div>
+            <div class="modal-body"><!--modal content-->         
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="comentario" rows="3"></textarea>
+                <input type="submit" name="Update" id="update" value="Update" />
+            </div>
+        </form>
+        <script>
+        $("#update").click(function(e) {
+            e.preventDefault();
+            var comentario = $("#comentario").val(); 
+            var parent_selection = $("#parent_selection").val();
+            var child_selection = $("#child_selection").val();
+            var dataString = 'comentario='+comentario+'&parent_selection='+parent_selection+'&child_selection='+child_selection;
+            $.ajax({
+                type:'POST',
+                data:dataString,
+                url:'insert.php',
+                success:function(data) {
+                alert(data);
+                }
+            });
+        });
+        </script>
