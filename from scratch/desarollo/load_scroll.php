@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  </head>
  <body>
   <div class="container">
@@ -22,20 +19,27 @@
 <script>
 
 $(document).ready(function(){
- 
- var limit = 10;//quantity of messages per fetch
+ var messages_per_add=8;
+ var limit = messages_per_add ;//quantity of messages per fetch
  var start = 0;
  var action = 'inactive';
- function load_data(limit, start)
+ var todas = $("#todas").val(); 
+ var pais = $("#pais").val();
+ var universidad = $("#universidad").val();
+ var contid=0;
+ var contvalue=0;
+ top_ads();
+ function load_data()
  {
   $.ajax({
    url:"fetch_and_print.php",//file of the fetch
    method:"POST",
-   data:{limit:limit, start:start},
+   data:{limit:limit, start:start, todas:todas, pais:pais, universidad:universidad,contid:contid,contvalue:contvalue},
    cache:false,
    success:function(data)
    {
     $('#load_data').append(data);
+    update_contvalue();
     if(data == '')
     {
      $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
@@ -50,21 +54,52 @@ $(document).ready(function(){
   });
  }
 
+ 
  if(action == 'inactive')
  {
   action = 'active';
   load_data(limit, start);
  }
+
  $(window).scroll(function(){
-  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
-  {
+  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive'){
+    reload();
+  }
+
+ });
+
+ function update_contvalue(){
+    contvalue=parseInt(document.getElementById(contid.toString()).value);
+    if(contvalue<2){
+        reload();
+    }
+    if(contvalue>=messages_per_add){
+        contvalue=0;
+    }
+ }
+
+ function reload(){
    action = 'active';
    start = start + limit;
+   contid++;
    setTimeout(function(){
-    load_data(limit, start);
-   }, 1000);
-  }
- });
- 
+   load_data(limit, start);
+   }, 1);
+ }
+
+ function top_ads(){
+   $.ajax({
+   url:"ads.php",//file of the fetch
+   method:"POST",
+   data:{},
+   cache:false,
+   success:function(data)
+   {
+    $('#load_data').append(data);
+   }
+  });
+ }
 });
+
+
 </script>
