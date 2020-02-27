@@ -1,28 +1,30 @@
- <?php
-    $comentario = $_POST['comentario'];//get external variable by name
-    $parent_selection = $_POST['parent_selection'];//get external variable by name
-    $child_selection = $_POST['child_selection'];//get external variable by name
 
-    if(!empty($comentario)){
+<?php
 
-        include 'host_variables.php';
+$comentario = $_POST['comentario'];//get external variable by name
+$parent_selection = $_POST['parent_selection'];//get external variable by name
+$child_selection = $_POST['child_selection'];//get external variable by name
 
-        $conn= new mysqli ($host, $dbusername, $dbpassword , $dbname);//create connection
+if(!empty($comentario)){
 
-        if(mysqli_connect_error()){//verify if there is not connection error
-            die('Conect Error('.mysqli_connect_errno().')'. mysqli_connect_error());
-        }
-        else{
-            //$sql = "INSERT INTO $tablename (Comentario) values ('$comentario')"; //insert into table
-            $sql = "INSERT INTO $tablename (Comentario,f1,f2,date) values ('$comentario','$parent_selection','$child_selection', CURDATE())"; //insert into table
-            if($conn->query($sql)){ //verify if sql exist in table
-                echo "se inserto correctamente";
-            }
-            else{
-                echo $child_selection;
-            }
-            $conn->close();//close the connection
-        }
+    include 'host_variables.php';
+
+    $conn= mysqli_connect ($host, $dbusername, $dbpassword , $dbname);//create connection
+    if(mysqli_connect_error()){
+        echo json_encode('error');
+        die('Conect Error('.mysqli_connect_errno().')'. mysqli_connect_error());
     }
+
+    else{
+        $stmt = $conn->prepare("INSERT INTO $tablename (Comentario,pais,universidad,date) values (?,?,?,CURDATE())");
+        $stmt->bind_param("sss", $comentario,$parent_selection,$child_selection);
+        $stmt->execute();
+        $stmt->close();
+        echo json_encode('inserted'); 
+    }
+    mysqli_close($conn); 
+}
+
+
 
 ?>

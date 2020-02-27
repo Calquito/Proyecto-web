@@ -1,8 +1,9 @@
-recordar evitar que la pagina se almacene en caché
-quitar referencias a urls de bootstrap  y jquery
-bugs: subir cuando no se han seleccionado drop-down
-https://www.adzooma.com/performance-report/?utm_source=SEJ&utm_medium=display&utm_campaign=Takeover&utm_content=750x500
-close connection mysql
+recordar evitar que la pagina se almacene en caché-listo
+quitar referencias a urls de bootstrap  y jquery-listo
+bugs: subir cuando no se han seleccionado drop-down-listo
+close connection mysql-listo
+close conections en fetch and print-listo
+revisar que comparaciones de strings esten con === en vez de =-listo
+poner error en ajax success-listo
 https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1
-poner error en ajax success 
 en fetch and print cambiar el limite para parar de 71 a 0

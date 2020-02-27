@@ -25,7 +25,7 @@ var icecreams = [
 	{display: "Ice milk", value: "ice-milk" }];
 
 //If parent option is changed
-$("#parent_selection").change(function() {
+$("#universidades_parent_selection").change(function() {
 		var parent = $(this).val(); //get option value from parent 
 		
 		switch(parent){ //using switch compare selected option and populate child
@@ -39,7 +39,7 @@ $("#parent_selection").change(function() {
 			 	list(icecreams);
 				break;	
 			default: //default child option is blank
-				$("#child_selection").html('');	 
+				$("#universidades_child_selection").html('');	 
 				break;
 		   }
 });
@@ -47,9 +47,9 @@ $("#parent_selection").change(function() {
 //function to populate child select box
 function list(array_list)
 {
-	$("#child_selection").html(""); //reset child options
+	$("#universidades_child_selection").html(""); //reset child options
 	$(array_list).each(function (i) { //populate child options 
-		$("#child_selection").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
+		$("#universidades_child_selection").append("<option value=\""+array_list[i].value+"\">"+array_list[i].display+"</option>");
 	});
 }
 
@@ -59,13 +59,13 @@ function list(array_list)
 </head>
 <body>	
 <div class="wrapper">
-Category : <select name="parent_selection" id="parent_selection">
+Category : <select name="universidades_parent_selection" id="universidades_parent_selection">
     <option value="">-- Please Select --</option>
     <option value="chocolates">Chocolates</option>
     <option value="vegetables">Vegetables</option>
     <option value="icecreams">Ice cream</option>
 </select>
-<select name="child_selection" id="child_selection">
+<select name="universidades_child_selection" id="universidades_child_selection">
 </select>
 </div>
 </body>

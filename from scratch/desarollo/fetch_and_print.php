@@ -36,11 +36,10 @@
             }
         }
         else if($universidad==='no'){
-            $query = "SELECT ID,Comentario,likes,f1 FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+            $query = "SELECT ID,Comentario,likes,pais FROM $tablename WHERE pais='".$pais."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){
                 $ID=$row["ID"];
-                if($row["f1"]===$pais){
                     $contvalue++;
                     if ($contvalue>=$messages_per_add){
                         break;
@@ -50,27 +49,26 @@
                         <?php include 'posts_scroll.php'; ?>
                     </html>
                     <?php
-                } 
+                
             }
         }
-        else{
-            $query = "SELECT ID,Comentario,likes,f2 FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+        else {
+            $query = "SELECT ID,Comentario,likes,universidad FROM $tablename WHERE universidad='".$universidad."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){
                 $ID=$row["ID"];
-                if($row["f2"]===$universidad){
-                    $contvalue++;
-                    if ($contvalue>=$messages_per_add){
-                        break;
-                    }
-                    ?>
-                    <!doctype html>
-                        <?php include 'posts_scroll.php'; ?>
-                    </html>
-                    <?php
-                } 
+                $contvalue++;
+                if ($contvalue>=$messages_per_add){
+                    break;
+                }
+                ?>
+                <!doctype html>
+                    <?php include 'posts_scroll.php'; ?>
+                </html>
+                <?php  
             }
         }
+        
         if($contvalue>=$messages_per_add){
             include 'ads.php';
         }
@@ -81,9 +79,10 @@
         ?>
         <input type="hidden" name="cont" id="<?php echo $contid;?>" value="<?php echo $contvalue;?>">
         <?php
+        mysqli_close($connect);
     }
     else{
-        die("Connection failed: ");
+        echo json_encode('error');
     }
 
 ?>

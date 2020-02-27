@@ -40,7 +40,7 @@ $(document).ready(function(){
    {
     $('#load_data').append(data);
     update_contvalue();
-    if(data == '')
+    if(data === '')
     {
      $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
      action = 'active';
@@ -50,19 +50,22 @@ $(document).ready(function(){
      $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
      action = "inactive";
     }
+   },
+   error: function (data) {
+      location.href = "error.php";
    }
   });
  }
 
  
- if(action == 'inactive')
+ if(action === 'inactive')
  {
   action = 'active';
   load_data(limit, start);
  }
 
  $(window).scroll(function(){
-  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive'){
+  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action === 'inactive'){
     reload();
   }
 
@@ -95,11 +98,12 @@ $(document).ready(function(){
    cache:false,
    success:function(data)
    {
-    $('#load_data').append(data);
+      $('#load_data').append(data);
+   },
+   error: function (data) {
+      location.href = "error.php";
    }
   });
  }
 });
-
-
 </script>

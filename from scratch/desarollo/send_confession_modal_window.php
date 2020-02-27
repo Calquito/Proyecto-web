@@ -15,25 +15,36 @@
         </form>
 
         <script>
-            function submit_confession() {
+            function submit_confession() {     
                 var comentario = $("#comentario").val(); 
                 var parent_selection = $("#parent_selection").val();
                 var child_selection = $("#child_selection").val();
                 var dataString = 'comentario='+comentario+'&parent_selection='+parent_selection+'&child_selection='+child_selection;
+
                 $.ajax({
                     type:'POST',
+                    dataType: "json",
                     data:dataString,
                     url:'insert.php',
                     success:function(data) {
-                    alert(data);
+                        if(data !=='error'){
+                            location.href = "index.php";
+                        }
+                        else{
+                            location.href = "error.php";
+                        }
+                    },
+                    error: function (data) {
+                        location.href = "error.php";
                     }
-                });
+                }); 
                 return false;
             };
         </script>
     </div>
 </div>
 </div>
+
 
 
   
