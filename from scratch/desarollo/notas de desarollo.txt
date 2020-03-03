@@ -7,3 +7,4 @@ revisar que comparaciones de strings esten con === en vez de =-listo
 poner error en ajax success-listo
 https://stackoverflow.com/questions/60174/how-can-i-prevent-sql-injection-in-php?rq=1
 en fetch and print cambiar el limite para parar de 71 a 0
+tamañ https://www.w3schools.com/tags/att_select_size.asp

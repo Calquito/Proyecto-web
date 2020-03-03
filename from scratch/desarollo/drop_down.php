@@ -10,7 +10,7 @@ var chocolates = [
 	{display: "Dark chocolate", value: "dark-chocolate" }, 
 	{display: "Milk chocolate", value: "milk-chocolate" }, 
 	{display: "White chocolate", value: "white-chocolate" },
-	{display: "Gianduja chocolate", value: "gianduja-chocolate" }];
+	{display: "gianduja-chocolate aun mas largo de lo que deberia", value: "gianduja-chocolate aun mas largo de lo que deberia" }];
 	
 var vegetables = [
 	{display: "Broccoli", value: "broccoli" }, 
@@ -59,14 +59,14 @@ function list(array_list)
 </head>
 <body>	
 <div class="wrapper">
-Category : <select name="parent_selection" id="parent_selection">
-    <option value="">-- Please Select --</option>
-    <option value="chocolates">Chocolates</option>
-    <option value="vegetables">Vegetables</option>
-    <option value="icecreams">Ice cream</option>
-</select>
-<select name="child_selection" id="child_selection">
-</select>
+	<select class="form-control" name="parent_selection" id="parent_selection">
+		<option value="">-- Please Select --</option>
+		<option value="chocolates">Chocolates</option>
+		<option value="vegetables">Vegetables</option>
+		<option value="icecreams">Ice cream</option>
+	</select>
+	<select class="form-control" name="child_selection" id="child_selection">
+	</select>
 </div>
 </body>
 </html>

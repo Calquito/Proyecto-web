@@ -36,14 +36,23 @@
         include 'universidades_modal_window.php';
         include 'posts_scripts.php'
         ?>
-
-        <div class="d-flex flex-row bd-highlight mb- justify-content-around ">
-          <!--scroll--> 
-          <div class=" bd-highlight w-50 mr-3"><?php include 'load_scroll.php';?></div>
-          <!--sidebar-->
-          <div class=" bd-highlight d-none d-sm-block w-25 ">
-          </div>    
-        </div>
+        
+          <div class="d-flex flex-row bd-highlight justify-content-around ">
+            <!--scrolls--> 
+            <div class=" bd-highlight w-100 ">
+              <?php include 'load_scroll.php';?>
+            </div>
+            <!--sidebar-->
+            <div class=" bd-highlight d-none d-sm-block w-50 ">
+              <div class="d-flex flex-row bd-highlight justify-content-around ">
+                <div class=" bd-highlight w-25">
+                </div>
+                <div class=" bd-highlight w-100">
+                  esto va en en sidebar y no deberia mostrarse luego de disminuir tanto
+                </div>
+              </div>
+            </div>    
+          </div>
 
         <!-- variables of the navbar -->
         <input type="hidden" name="todas" id="todas" value="<?php echo $todas;?>">

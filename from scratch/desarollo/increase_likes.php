@@ -12,28 +12,23 @@
         die('Conect Error('.mysqli_connect_errno().')'. mysqli_connect_error());
     }
     else{
-
         if (isset($_POST['increase_button']) and !verify($IP,$ID,$conn,$tablename) ) {
-            $sql = "UPDATE $tablename SET likes = likes +1 , ips = CONCAT(ips,'".$IP."',',')  WHERE ID = $ID;"; //insert into table
 
-            if($conn->query($sql)){ //verify if sql exist in table
-                echo json_encode('inserted');
-            }
-            else{
-                echo json_encode('error');
-            }
+            $stmt = $conn->prepare("UPDATE $tablename SET likes = likes +1 , ips = CONCAT(ips,?,',')  WHERE ID = ?;");
+            $stmt->bind_param("ss",$IP,$ID);
+            $stmt->execute();
+            $stmt->close();
+            echo json_encode('inserted'); 
             mysqli_close($conn);//close the connection
         
-        }
-         
+        } 
         else if (isset($_POST['decrease_button']) and !verify($IP,$ID,$conn,$tablename)) {
-            $sql = "UPDATE $tablename SET likes = likes -1 , ips = CONCAT(ips,'".$IP."',',')   WHERE ID = $ID;"; //insert into table
-            if($conn->query($sql)){ //verify if sql exist in table
-                echo json_encode('inserted');
-            }
-            else{
-                echo json_encode('error');
-            }
+
+            $stmt = $conn->prepare("UPDATE $tablename SET likes = likes -1 , ips = CONCAT(ips,?,',')  WHERE ID = ?;");
+            $stmt->bind_param("ss",$IP,$ID);
+            $stmt->execute();
+            $stmt->close();
+            echo json_encode('inserted'); 
             mysqli_close($conn);//close the connection
             
         } 

@@ -1,15 +1,18 @@
    <!-- Modal -->
 <div class="modal fade" id="confessionModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
+<div class="modal-dialog modal-dialog-centered w-75" role="document">
     <div class="modal-content">
-
         <form  method="post" >
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <?php include 'drop_down.php';?>
+                <div class="w-50">
+                    <h4 class="modal-title" id="exampleModalLabel">¿De dónde eres?:</h5>
+                </div>
+                <div class ="w-50">
+                    <?php include 'drop_down.php';?>
+                </div>
             </div>
             <div class="modal-body"><!--modal content-->         
-                <textarea class="form-control"  name="comentario" id="comentario" rows="3"></textarea>
+                <textarea class="form-control"  name="comentario" id="comentario" rows="3" placeholder='Escribe tu confesión'></textarea>
                 <input type="submit" name="Update" id="update" value="Update" onclick="return submit_confession()"> 
             </div>
         </form>
