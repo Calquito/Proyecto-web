@@ -48,45 +48,54 @@
                 <div class="d-flex flex-row bd-highlight justify-content-around">
                     <div class="w-75"></div>
                     <div class="modal-body"><!--modal content--> 
-                        <h5 class="modal-title" >Página de contacto</h5>
+                        <h5 class="modal-title" >Reglas de la página</h5>
+                        
+                        <p class="modal-title" >Confesiones de U es una plataforma online donde los estudiantes universitarios pueden sentirse libres de expresar sus opiniones y secretos acerca de su vida universitaria. Es un espacio para compartir de manera anónima y disfrutable
+                        Algunas confesiones pueden no ser del agrado de todos, ser ofensivo o revelador y sin embargo no incumplir las normas de la página.
+                        Queremos que todos se sientan cómodos al utilizar nuestra página, por lo que hemos definido qué contenido no es aceptable en nuestra página. Estas reglas deben ser cumplidas por las confesiones y los comentarios hechos en la página.
                         <br>
-                        <p class="modal-title" >Aquí puedes dejar tus comentarios y sugerencias para la página.Si tuviste algún problema en nuestra página, te agradecemos nos lo expliques con detalle. Si quieres incluir a tu universidad en la página, indicanos de que país es y como se llama, y con gusto la agregaremos.</p>        
-                        <form  method="post" >
-                            <input type='text' class="form-control"  name="nombre" id="nombre" placeholder="nombre(opcional)"></text><br>
-                            <input type='text' class="form-control"  name="email" id="email" placeholder="email(opcional)"></text><br>
-                            <textarea class="form-control"  name="comentario_contacto" id="comentario_contacto" placeholder="comentario" rows="3"></textarea>
-                            <br> <br>
-                            <input type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()"> ¡Gracias!
-                        </form>
+                        <br>
+                        <h5 class="modal-title" >Contenido no deseado:</h5>
+                        <p class="modal-title" >
+                        *Contenido ilegal
+                        <br>
+                        *Spam
+                        <br>
+                        *Amenazas
+                        <br> 
+                        *Rumores falsos que puedan afectar la imagen de alguien
+                        <br> 
+                        *Contenido que incite a la violencia
+                        <br> 
+                        *Contenido con información falsa
+                        <br> 
+                        *Contenido que hositgue, acose o humille 
+                        <br> 
+                        *Contenido con información personal que no debe ser de acceso público
+                        <br> 
+                        *Contenido que atenta contra la salud o la integridad física y mental
+                        <br> 
+                        *Contenido discriminatorio
+                        <br> 
+                        *Contenido pornografico ilegal 
+                        <br> 
+                        *Contenido engañoso
+                        <br> 
+                        <br> 
+
+                        **Cualquier usuario de la pagina es libre de ofrecer productos y servicios, o hacerle publicidad a los mismos, siempre y cuando cumpla con las leyes vigentes y no sea spam.
+
+                        <br> 
+                        <br> 
+                        **Confesiones de U, dentro del marco de lo legal, no eliminará confesiones simplemente porque sean desagradables para alguien. Cierto contenido puede no ser del gusto de todos, pero esto no implica que deba ser eliminado. 
+
+                        <br> 
+                        <br> 
+                        Cualquier consulta puedes dirigirla mediante nuestra <a href="contacto.php">página de contacto.</a>
+                        </p>        
+                        
                     </div>
                     <div class="w-75"></div>  
-                <script>
-                    function submit_confession() {
-                        var comentario_contacto = $("#comentario_contacto").val(); 
-                        var email=$("#email").val();
-                        var nombre=$('#nombre').val();
-                        var dataString = 'comentario_contacto='+comentario_contacto+"&email="+email+"&nombre="+nombre;
-                        $.ajax({
-                            type:'POST',
-                            dataType: "json",
-                            data:dataString,
-                            url:'insert_contact.php',
-                            success:function(data) {
-                                if(data =='inserted'){
-                                    alert("¡Gracias!");
-                                    location.href = "index.php";
-                                }
-                                else{
-                                    location.href = "error.php";
-                                }
-                            },
-                            error: function (data) {
-                                location.href = "error.php";
-                            }
-                        });
-                        return false;
-                    };
-                </script>
                 </div>
             </div>
             <!--sidebar-->

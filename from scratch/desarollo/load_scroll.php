@@ -19,7 +19,7 @@
 <script>
 
 $(document).ready(function(){
- var messages_per_add=8;
+ var messages_per_add=10;
  var limit = messages_per_add ;//quantity of messages per fetch
  var start = 0;
  var action = 'inactive';
@@ -34,7 +34,7 @@ $(document).ready(function(){
   $.ajax({
    url:"fetch_and_print.php",//file of the fetch
    method:"POST",
-   data:{limit:limit, start:start, todas:todas, pais:pais, universidad:universidad,contid:contid,contvalue:contvalue},
+   data:{limit:limit, start:start, todas:todas, pais:pais, universidad:universidad,contid:contid,contvalue:contvalue,messages_per_add:messages_per_add},
    cache:false,
    success:function(data)
    {

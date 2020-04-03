@@ -58,15 +58,23 @@ function list(array_list)
 
 </head>
 <body>	
-<div class="wrapper">
-Category : <select name="universidades_parent_selection" id="universidades_parent_selection">
-    <option value="">-- Please Select --</option>
-    <option value="chocolates">Chocolates</option>
-    <option value="vegetables">Vegetables</option>
-    <option value="icecreams">Ice cream</option>
-</select>
-<select name="universidades_child_selection" id="universidades_child_selection">
-</select>
+
+<div class="d-flex flex-row bd-highlight justify-content-between">
+	<div class="bd-highlight mr-2 w-100 ">
+		País:
+		<select class="form-control" name="universidades_parent_selection" id="universidades_parent_selection">
+			<option value="">-- Please Select --</option>
+			<option value="chocolates">Chocolates</option>
+			<option value="vegetables">Vegetables</option>
+			<option value="icecreams">Ice cream</option>
+		</select>
+	</div>
+	<div class="bd-highlight ml-2 w-100 ">
+		Universidad:
+		<select class="form-control" name="universidades_child_selection" id="universidades_child_selection" >
+		</select>
+	</div>
 </div>
+
 </body>
 </html>

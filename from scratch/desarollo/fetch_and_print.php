@@ -3,7 +3,7 @@
     //define the variables of the server:
 
     include 'host_variables.php';
-    $messages_per_add=8;
+    $messages_per_add=(int)$_POST["messages_per_add"];
 
     //get ip 
     include 'get_ip.php';
@@ -19,7 +19,7 @@
     if(isset($_POST["limit"], $_POST["start"])){      
         $connect = mysqli_connect($host, $dbusername, $dbpassword , $dbname);
         if($todas==='todas'){
-            $query = "SELECT ID,Comentario,likes FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+            $query = "SELECT ID,Comentario,likes,pais,universidad FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){
                 $contvalue++;
@@ -36,7 +36,7 @@
             }
         }
         else if($universidad==='no'){
-            $query = "SELECT ID,Comentario,likes,pais FROM $tablename WHERE pais='".$pais."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+            $query = "SELECT ID,Comentario,likes,pais,universidad FROM $tablename WHERE pais='".$pais."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){
                 $ID=$row["ID"];
@@ -53,7 +53,7 @@
             }
         }
         else {
-            $query = "SELECT ID,Comentario,likes,universidad FROM $tablename WHERE universidad='".$universidad."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
+            $query = "SELECT ID,Comentario,likes,pais,universidad FROM $tablename WHERE universidad='".$universidad."' ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){
                 $ID=$row["ID"];

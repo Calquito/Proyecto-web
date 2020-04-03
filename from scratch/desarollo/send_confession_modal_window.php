@@ -4,16 +4,16 @@
     <div class="modal-content">
         <form  method="post" >
             <div class="modal-header">
-                <div class="w-50">
-                    <h4 class="modal-title" id="exampleModalLabel">¿De dónde eres?:</h5>
+                <div class="w-100">
+                    <h5 class="modal-title" id="exampleModalLabel">¿De dónde eres?:</h5>
                 </div>
-                <div class ="w-50">
+                <div class ="w-100">
                     <?php include 'drop_down.php';?>
                 </div>
             </div>
             <div class="modal-body"><!--modal content-->         
                 <textarea class="form-control"  name="comentario" id="comentario" rows="3" placeholder='Escribe tu confesión'></textarea>
-                <input type="submit" name="Update" id="update" value="Update" onclick="return submit_confession()"> 
+                <input  class="float-right mt-2 mb-2" type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()"> 
             </div>
         </form>
 
