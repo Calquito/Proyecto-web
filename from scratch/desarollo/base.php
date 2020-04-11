@@ -58,7 +58,7 @@
               </div>
             </div>    
           </div>
-
+ 
         <!-- variables of the navbar -->
         <input type="hidden" name="todas" id="todas" value="<?php echo $todas;?>">
         <input type="hidden" name="pais" id="pais" value="<?php echo $pais;?>">

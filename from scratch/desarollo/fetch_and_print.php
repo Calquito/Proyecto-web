@@ -72,8 +72,8 @@
         if($contvalue>=$messages_per_add){
             include 'ads.php';
         }
-        if(intval($ID)<=71){
-            $contvalue='finished';
+        if(intval($ID)<=0){
+            $contvalue=-99;
         }
 
         ?>

@@ -67,6 +67,7 @@ function list(array_list)
 			<option value="chocolates">Chocolates</option>
 			<option value="vegetables">Vegetables</option>
 			<option value="icecreams">Ice cream</option>
+			<option value="pizza">Ice cream</option>
 		</select>
 	</div>
 	<div class="bd-highlight ml-2 w-100 ">

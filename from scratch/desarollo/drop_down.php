@@ -62,7 +62,7 @@ function list(array_list)
 <div class="d-flex flex-row bd-highlight justify-content-between">
 	<div class="bd-highlight mr-2 w-100 ">
 		País:
-		<select class="form-control" name="parent_selection" id="parent_selection" >
+		<select class="form-control" name="parent_selection" id="parent_selection">
 			<option value="">-- Please Select --</option>
 			<option value="chocolates">Chocolates</option>
 			<option value="vegetables">Vegetables</option>
@@ -71,7 +71,7 @@ function list(array_list)
 	</div>
 	<div class="bd-highlight ml-2 w-100 ">
 		Universidad:
-		<select class="form-control" name="child_selection" id="child_selection" >
+		<select class="form-control" name="child_selection" id="child_selection">
 		</select>
 	</div>
 </div>

@@ -48,15 +48,15 @@
                 <div class="d-flex flex-row bd-highlight justify-content-around">
                     <div class="w-75"></div>
                     <div class="modal-body"><!--modal content--> 
-                        <h5 class="modal-title" >Página de contacto</h5>
+                        <h4 class="modal-title" style="text-align: center;">Página de contacto</h4>
                         <br>
                         <p class="modal-title" >Aquí puedes dejar tus comentarios y sugerencias para la página.Si tuviste algún problema en nuestra página, te agradecemos nos lo expliques con detalle. Si quieres incluir a tu universidad en la página, indicanos de que país es y como se llama, y con gusto la agregaremos.</p>        
                         <form  method="post" >
-                            <input type='text' class="form-control"  name="nombre" id="nombre" placeholder="nombre(opcional)"></text><br>
-                            <input type='text' class="form-control"  name="email" id="email" placeholder="email(opcional)"></text><br>
-                            <textarea class="form-control"  name="comentario_contacto" id="comentario_contacto" placeholder="comentario" rows="3"></textarea>
+                            <input type='text' class="form-control"  name="nombre" id="nombre" placeholder="Nombre(opcional)"></text><br>
+                            <input type='text' class="form-control"  name="email" id="email" placeholder="Email(opcional)"></text><br>
+                            <textarea class="form-control"  name="comentario_contacto" id="comentario_contacto" placeholder="Comentario" rows="3"></textarea>
                             <br> <br>
-                            <input type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()"> ¡Gracias!
+                            <input class="btn btn-primary" type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()" style="background-color: #0073e6;"> ¡Gracias!
                         </form>
                     </div>
                     <div class="w-75"></div>  

@@ -39,17 +39,18 @@ $(document).ready(function(){
    success:function(data)
    {
     $('#load_data').append(data);
-    update_contvalue();
-    if(data === '')
+    if(parseInt(document.getElementById(contid.toString()).value)<-50)
     {
-     $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
+     //document.getElementById("load_data_message").innerHTML='<object type="text/html" data="nohaymasconfesiones.php" ></object>';
+     load_final_message();
      action = 'active';
+     return false;
     }
     else
     {
-     $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
      action = "inactive";
     }
+    update_contvalue();
    },
    error: function (data) {
       location.href = "error.php";
@@ -57,11 +58,10 @@ $(document).ready(function(){
   });
  }
 
- 
  if(action === 'inactive')
  {
   action = 'active';
-  load_data(limit, start);
+  load_data();
  }
 
  $(window).scroll(function(){
@@ -73,7 +73,7 @@ $(document).ready(function(){
 
  function update_contvalue(){
     contvalue=parseInt(document.getElementById(contid.toString()).value);
-    if(contvalue<2){
+    if(contvalue<2 ){
         reload();
     }
     if(contvalue>=messages_per_add){
@@ -86,8 +86,8 @@ $(document).ready(function(){
    start = start + limit;
    contid++;
    setTimeout(function(){
-   load_data(limit, start);
-   }, 1);
+   load_data();
+   }, 0);
  }
 
  function top_ads(){
@@ -105,5 +105,22 @@ $(document).ready(function(){
    }
   });
  }
+
+ function load_final_message(){
+   $.ajax({
+   url:"nohaymasconfesiones.php",//file of the fetch
+   method:"POST",
+   data:{},
+   cache:false,
+   success:function(data)
+   {
+      $('#load_data_message').append(data);
+   },
+   error: function (data) {
+      location.href = "error.php";
+   }
+  });
+ }
+ 
 });
 </script>

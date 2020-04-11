@@ -3,7 +3,9 @@
   <!--navbar with buttons and title-->
   <nav class="navbar navbar-light d-flex form-inline flex-row justify-content-around" style="background-color: #0073e6;">
     <div>
-    <a class="navbar-brand  text-white" href="#todas.php">Titulofdsfsdaasddds</a>
+    <a href="todas.php">
+    <img  alt="ConfesionesDeU" src="images/logo y nombre.png" width="267" height="44">
+    </a>
     </div>
     <div>
         <button class="btn btn-outline-light " type="button" data-toggle="modal" data-target="#confessionModal">Enviar confesión</button>
@@ -14,9 +16,7 @@
     <div class=" bd-highlight d-none d-sm-block  "></div>
     <div class="d-flex flex-row bd-highlight mb- justify-content-around w-50">
           <div class="p-2 bd-highlight">
-            <form  method="post" action='todas.php'>
-              <button class="btn btn-link text-body" type="submit" >Todas</button> 
-            </form>
+              <a href="todas.php" class="btn btn-link text-body">Todas</a>
           </div>
           <div class="p-2 bd-highlight">
             <button class="btn btn-link text-body" type="button" data-toggle="modal" data-target="#paises_modal">País</button>

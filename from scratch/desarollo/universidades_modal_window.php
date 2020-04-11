@@ -2,7 +2,7 @@
 <div class="modal fade" id="universidades_modal" tabindex="-1" role="dialog" aria-labelledby="universidades_exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
-        <form  method="post" action='universidades.php'>
+        <form  method="get" action='universidades.php'>
             <div class="modal-header">
                 <div class="w-100">
                     <h5 class="modal-title" id="exampleModalLabel">¿De dónde eres?:</h5>
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="modal-body"><!--modal content-->
-                <input class="float-right mt-2 mb-2" type="submit" name="universidades_Update" id="universidades_update" value="Ir">        
+                <input class="float-right mb-2 btn btn-primary" type="submit" name="universidades_Update" id="universidades_update" value="Ir" style="background-color: #0073e6;">        
             </div>
         </form>
     </div>

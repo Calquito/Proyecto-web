@@ -48,8 +48,8 @@
                 <div class="d-flex flex-row bd-highlight justify-content-around">
                     <div class="w-75"></div>
                     <div class="modal-body"><!--modal content--> 
-                        <h5 class="modal-title" >Reglas de la página</h5>
-                        
+                        <h4 class="modal-title" style="text-align: center;" >Reglas de la página</h4>
+                        <br>
                         <p class="modal-title" >Confesiones de U es una plataforma online donde los estudiantes universitarios pueden sentirse libres de expresar sus opiniones y secretos acerca de su vida universitaria. Es un espacio para compartir de manera anónima y disfrutable
                         Algunas confesiones pueden no ser del agrado de todos, ser ofensivo o revelador y sin embargo no incumplir las normas de la página.
                         Queremos que todos se sientan cómodos al utilizar nuestra página, por lo que hemos definido qué contenido no es aceptable en nuestra página. Estas reglas deben ser cumplidas por las confesiones y los comentarios hechos en la página.
