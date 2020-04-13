@@ -63,6 +63,7 @@
         <input type="hidden" name="todas" id="todas" value="<?php echo $todas;?>">
         <input type="hidden" name="pais" id="pais" value="<?php echo $pais;?>">
         <input type="hidden" name="universidad " id="universidad" value="<?php echo $universidad;?>">
+        <input type="hidden" name="confesion_id" id="confesion_id" value="<?php echo $confesion_id;?>">
         
             
     </body>

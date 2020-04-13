@@ -48,13 +48,14 @@
                 <div class="d-flex flex-row bd-highlight justify-content-around">
                     <div class="w-75"></div>
                     <div class="modal-body"><!--modal content--> 
-                        <h4 class="modal-title" style="text-align: center;">Página de contacto</h4>
+                        <h4 class="modal-title" style="text-align: center;">Agregar universidad</h4>
                         <br>
-                        <p class="modal-title" >Aquí puedes dejar tus comentarios y sugerencias para la página.Si tuviste algún problema en nuestra página, te agradecemos nos lo expliques con detalle.</p>        
+                        <p class="modal-title" >Aquí puedes agregar tu universidad. Indícanos el nombre y el país y con gusto la agregaremos. Cualquier comentario adicional es bienvenido</p>               
+                        <br>
                         <form  method="post" >
-                            <input type='text' class="form-control"  name="nombre" id="nombre" placeholder="Nombre(opcional)"></text><br>
-                            <input type='text' class="form-control"  name="email" id="email" placeholder="Email(opcional)"></text><br>
-                            <textarea class="form-control"  name="comentario_contacto" id="comentario_contacto" placeholder="Comentario" rows="3"></textarea>
+                            <input type='text' class="form-control"  name="nombre" id="nombre" placeholder="País"></text><br>
+                            <input type='text' class="form-control"  name="email" id="email" placeholder="Universidad"></text><br>
+                            <textarea class="form-control"  name="comentario_contacto" id="comentario_contacto" placeholder="Comentario(opcional)" rows="3"></textarea>
                             <br> <br>
                             <input class="btn btn-primary" type="submit" name="Update" id="update" value="Enviar" onclick="return submit_message()" style="background-color: #0073e6;"> ¡Gracias!
                         </form>

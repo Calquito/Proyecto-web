@@ -13,12 +13,27 @@
     $universidad=$_POST["universidad"];
     $contid=$_POST["contid"];
     $contvalue=$_POST["contvalue"];
+    $confesion_id=$_POST["confesion_id"];
     $ID=0;
 
     // fetch from server
     if(isset($_POST["limit"], $_POST["start"])){      
         $connect = mysqli_connect($host, $dbusername, $dbpassword , $dbname);
-        if($todas==='todas'){
+        if($confesion_id!=="no"){
+            $connect = mysqli_connect($host, $dbusername, $dbpassword , $dbname);
+            $query = "SELECT ID,Comentario,likes,pais,universidad FROM $tablename WHERE ID='".(int)$confesion_id."' ";
+            $result = mysqli_query($connect, $query);
+            $row = mysqli_fetch_array($result);
+            $ID=$row["ID"];
+            ?>
+            <!doctype html>
+                <?php include 'posts_scroll.php'; ?>
+            </html>
+            <?php
+            $contvalue=-99;
+            //return false;
+        }
+        else if($todas==='todas'){
             $query = "SELECT ID,Comentario,likes,pais,universidad FROM $tablename ORDER BY ID DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."";
             $result = mysqli_query($connect, $query);
             while($row = mysqli_fetch_array($result)){

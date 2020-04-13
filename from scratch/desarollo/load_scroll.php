@@ -26,6 +26,7 @@ $(document).ready(function(){
  var todas = $("#todas").val(); 
  var pais = $("#pais").val();
  var universidad = $("#universidad").val();
+ var confesion_id = $("#confesion_id").val();
  var contid=0;
  var contvalue=0;
  top_ads();
@@ -34,7 +35,7 @@ $(document).ready(function(){
   $.ajax({
    url:"fetch_and_print.php",//file of the fetch
    method:"POST",
-   data:{limit:limit, start:start, todas:todas, pais:pais, universidad:universidad,contid:contid,contvalue:contvalue,messages_per_add:messages_per_add},
+   data:{limit:limit, start:start, todas:todas, pais:pais, universidad:universidad,contid:contid,contvalue:contvalue,messages_per_add:messages_per_add,confesion_id:confesion_id},
    cache:false,
    success:function(data)
    {

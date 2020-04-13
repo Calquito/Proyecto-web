@@ -9,11 +9,14 @@
                 </div>
                 <div class ="w-100">
                     <?php include 'drop_down.php';?>
+                    <div class="mt-2">
+                    <a href="agregaru.php">Agregar universidad</a>
+                    </div>
                 </div>
             </div>
             <div class="modal-body"><!--modal content-->         
                 <textarea class="form-control"  name="comentario" id="comentario" rows="3" placeholder='Escribe tu confesión'></textarea>
-                <input  class="float-right mt-2 mb-2" type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()"> 
+                <input  class="float-right mt-2 mb-2  btn btn-primary" type="submit" name="Update" id="update" value="Enviar" onclick="return submit_confession()" style="background-color: #0073e6;"> 
             </div>
         </form>
 

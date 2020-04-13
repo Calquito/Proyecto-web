@@ -8,7 +8,7 @@
                     <h5 class="modal-title" id="reportModalLabel<?php echo $ID?>">Reportar confesión <?php echo $ID?></h5>
                     <br>
                     <p>Si esta confesión viola las <a href="reglas.php">reglas de la página</a>  te agradecemos la reportes. La revisaremos y procederemos a borrarla si es necesario. ¡Gracias!</p>
-                    <input class="float-right mt-2 mb-2" type="submit" name="report_update<?php echo $ID?>" id="report_update<?php echo $ID?>" value="Reportar" onclick="return send_report('<?php echo $ID;?>')">        
+                    <input class="float-right mt-2 mb-2  btn btn-primary" type="submit" name="report_update<?php echo $ID?>" id="report_update<?php echo $ID?>" value="Reportar" onclick="return send_report('<?php echo $ID;?>')" style="background-color: #0073e6;" >        
                 </div>
             </form>
         </div>

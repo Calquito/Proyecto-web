@@ -21,18 +21,41 @@
         <p class="card-text"><?php echo $row["Comentario"]?></p>
     </div>
     <div class="card-footer">
-            <div style="width:22px;height:22px;" class="float-right">
-                <input style="width:100%;height:100%;" type="image" src="images/report.png" alt="Enviar reporte" data-toggle="modal" data-target="#report_modal<?php echo $ID?>">
-                <?php include "report_modal.php"?>
-            </div>
-
-            <div style="width:10%;height;4%;" class="float-right">
+            <div style="width:75%;height;25%;" class="float-right mr-2 mb-2" >
+                <?php
+                    $url=urlencode('http://confesionesdeu.com/confesion_id.php?confesion_id='.$ID);
+                    $text=urlencode('¡Mira esta confesión y muchas más! ');
+                    $facebook_url='https://www.facebook.com/sharer/sharer.php?u='.$url.'&t='.$text;
+                    $twitter_url='https://twitter.com/intent/tweet?text='.$text.'&url='.$url.'&via=user';
+                    $whatsapp_url='https://api.whatsapp.com/send?text='.$text.$url;
+                ?>
+                <div style="width:25px;height:25px;" class="float-right mr-1">
+                    <a href="<?php echo $facebook_url;?>">
+                        <img style="width:100%;height:100%;"  alt="facebook url" src="images/facebook_icon.png" width="267" height="44">
+                    </a>
+                </div>
+                <div style="width:25px;height:25px;" class="float-right mr-1">
+                    <a href="<?php echo $twitter_url;?>">
+                        <img style="width:100%;height:100%;"  alt="twitter  url" src="images/twitter_icon.png" width="267" height="44">
+                    </a>
+                </div>
+                <div style="width:25px;height:25px;" class="float-right mr-1">
+                    <a href="<?php echo $whatsapp_url;?>" >
+                        <img style="width:100%;height:100%;"  alt="whatsapp url" src="images/whatsapp_icon.png" width="267" height="44">
+                    </a>
+                </div>
                 <!-- iconos de redes sociales-->
             </div>
 
             <div>
-                <div style="width:22px;height:22px;">
-                    <input style="width:100%;height:100%;" type="image" src="images/comment_icon.png" alt="Enviar reporte" data-toggle="collapse" data-target="#comments<?php echo $ID;?>">
+                <div style="width:70px;height:25px;">
+                    <div style="width:25px;height:25px;" class="float-left">
+                        <input style="width:100%;height:100%;" type="image" src="images/comment_icon.png" alt="Comentarios" data-toggle="collapse" data-target="#comments<?php echo $ID;?>">
+                    </div>
+                    <div style="width:25px;height:25px;" class="float-right">
+                        <input style="width:100%;height:100%;" type="image" src="images/report.png" alt="Enviar reporte" data-toggle="modal" data-target="#report_modal<?php echo $ID?>">
+                        <?php include "report_modal.php"?>
+                    </div>
                 </div>
                 <div id="comments<?php echo $ID;?>" class="collapse">
                     <div id="wpac-comment<?php echo $ID;?>"></div>
@@ -49,7 +72,8 @@
                         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
                     })();
                     </script>
-                    <!--<a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>-->
+                    <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>
+                    
                 </div>
             </div>
     </div>
