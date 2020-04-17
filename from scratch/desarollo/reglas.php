@@ -1,45 +1,7 @@
 <?php
   try {
+      include 'global_head.php';
     ?>
-    <!DOCTYPE html>
-    <html lang="en">
-    <html>
-    <head>
-        <link rel="icon" type="image/png" href="images/page_icon.png" />
-        <link rel="stylesheet" type="text/css" href="all_styles.css" />
-        <meta http-equiv="Expires" content="0">
-        <meta http-equiv="Last-Modified" content="0">
-        <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-         
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-
-        <title>confesionesdeu.com ¡el sitio de las confesiones universitarias!</title>
-
-    </head>
-    <body style="background-color:#E9EBEE;">
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->	
-        <script src="jquery.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
-        <!--includes -->
-        <?php 
-        include 'nav_and_bar.php';
-        include 'send_confession_modal_window.php';
-        include 'paises_modal_window.php';
-        include 'universidades_modal_window.php';
-        include 'posts_scripts.php'
-        ?>
-        
           <div class="d-flex flex-row bd-highlight justify-content-around ">
             <!--scrolls-->
             <div class=" bd-highlight d-none d-sm-block w-25 ">
@@ -50,8 +12,9 @@
                     <div class="modal-body"><!--modal content--> 
                         <h4 class="modal-title" style="text-align: center;" >Reglas de la página</h4>
                         <br>
-                        <p class="modal-title" >Confesiones de U es una plataforma online donde los estudiantes universitarios pueden sentirse libres de expresar sus opiniones y secretos acerca de su vida universitaria. Es un espacio para compartir de manera anónima y disfrutable
+                        <p class="modal-title" >Confesiones de U es una plataforma online donde los estudiantes universitarios pueden sentirse libres de expresar sus opiniones y secretos acerca de su vida universitaria. Es un espacio para compartir de manera anónima y pasar el rato.
                         Algunas confesiones pueden no ser del agrado de todos, ser ofensivo o revelador y sin embargo no incumplir las normas de la página.
+                        A pesar de que intentamos censurar lo menos posible, debemos cumplir con estas reglas para el bienestar de todos.
                         Queremos que todos se sientan cómodos al utilizar nuestra página, por lo que hemos definido qué contenido no es aceptable en nuestra página. Estas reglas deben ser cumplidas por las confesiones y los comentarios hechos en la página.
                         <br>
                         <br>
@@ -73,11 +36,11 @@
                         <br> 
                         *Contenido con información personal que no debe ser de acceso público
                         <br> 
-                        *Contenido que atenta contra la salud o la integridad física y mental
+                        *Contenido que atenta contra la salud o la integridad física, mental y psicológica
                         <br> 
                         *Contenido discriminatorio
                         <br> 
-                        *Contenido pornografico ilegal 
+                        *Contenido pornográfico o erótico
                         <br> 
                         *Contenido engañoso
                         <br> 

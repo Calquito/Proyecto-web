@@ -93,7 +93,7 @@ $(document).ready(function(){
 
  function top_ads(){
    $.ajax({
-   url:"ads.php",//file of the fetch
+   url:"top_ads.php",
    method:"POST",
    data:{},
    cache:false,

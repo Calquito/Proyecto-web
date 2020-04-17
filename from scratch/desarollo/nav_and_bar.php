@@ -4,7 +4,7 @@
   <nav class="navbar navbar-light d-flex form-inline flex-row justify-content-around" style="background-color: #0073e6;">
     <div>
     <a href="todas.php">
-    <img  alt="ConfesionesDeU" src="images/logo y nombre.png" width="267" height="44">
+    <img  alt="ConfesionesDeU" src="images/logo y nombre.png" width="305" height="44">
     </a>
     </div>
     <div>

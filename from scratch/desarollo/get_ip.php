@@ -16,5 +16,4 @@ function getUserIpAddr(){
     }
     return $ip;
 }
-
 ?>
